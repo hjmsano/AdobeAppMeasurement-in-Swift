@@ -10,23 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBAction func send_state(sender: AnyObject) {
-        ADBMobile.trackState("ScreenName", data: nil)
-    }
-    
     
     @IBAction func send_action(sender: AnyObject) {
+        // Send an action data when user clicks the button (like s.tl)
         ADBMobile.trackAction("myapp.ActionName", data: nil)
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        super.viewDidLoad();
+        
+        // Fire trackState method (like s.t)
+        // Note: AppMeasurement sends trackState automatically. In this case, the image-request will be duplicated.
+        // ADBMobile.trackState("ScreenName", data: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
